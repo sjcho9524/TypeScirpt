@@ -1,7 +1,8 @@
 ## 타입 스크립트를 이해하면  어떤 브라우저나 어떤 OS 어떤 자바스크립트보다 코드를 실행하기전에 당신의 시간을 절약해준다
 ## 그리고 완전 오픈소스이다
-
+---
 # TypeScript
+
 ## =Language
 ## =Typed Superset of JavaScript
 ## =compiles to plain JavaScript
@@ -11,11 +12,14 @@
 * 전통적인 Compiled Languge 와는 다른 점이 많습니다.
 * 그래서 'Transpile' 이라는 용어를 사용하기도 합니다.
 * 자바스크립트는 ' interpreted Languge' 입니다.
-
+---
 # node.js
+
 * Chrome's v8 JavaScropt Engine 을 사용하며, 자바스크립트를 해석하고 OS 레벨에서의 API를 제공하는
 * 서버 사이드 용 자바스크립트 런타임 환경
+---
 # browser
+
 ### HTML 을 동적으로 만들기 위해 브라우저에서 자바스크립트를 해석하고, DOM을 제어할 수 있도록 하는 자바스크립트 런타임 환경
 * 간단한 컴파일러 사용 예제
 * 타입 스크립트 컴파일러를 글로벌로 설치 후,
@@ -49,6 +53,7 @@
 	- Tuple: object 형
 ---
 # Primitve Type
+
 * 오브젝트와 레퍼런스 형태가 아닌 실제 값을 저장하는 자료형이다.
 * 프리미티브 형의 내장 함수를 사용 가능한 것은 자바스크립트 처리방식 덕분
 * (ES2015 기준) 6가지
@@ -92,11 +97,11 @@ let age: number = 39;
 let sentence: string = `Hello, my name is ${ fullName }.
 
 I'll be ${age + 1} years old next month.`;
-
 console.log(sentence)
 ```
 ---
 # Symbol
+
 * ECMAScript 2015 의 Symbol 이다.
 * new Symbol 로 사용할 수 없다
 * Symbol 을 함수로 사용해서 symbol 타입을 만들어 낼 수 있다.
@@ -112,22 +117,15 @@ let obj = {
 # Undefined & Null
 
 * TypeScript 에서, undefined 와 null 은 실제로 각각 undefined 및 null 이라는 타입을 가진다.
-
 * void 와 마찬가지로, 그 자체로는 그다지 유용하지 않다.
-
 * 둘다 소문자만 존재
-
+---
 # undefined & null are subtypes of all other types.
 
 * 설정을 하지 않으면 그렇다
-
 * number 에 null 또는 undefined 를 할당할 수 없다
-
 * 하지만, 컴파일 옵션에서  \`--strictNullChecks` 사용하면, null 과 undefined 는 void 나 자기 자신들에게만 할당할 수 있다.
-
 	- 이 경우, null 과 undefined 를 할당할 수 있게 하려면, union type 을 이용해야한다.
-
-
 ---
 # null in JavaScript
 
@@ -191,26 +189,25 @@ let obj = {
 ---
 # strictNullChecks 옵션을 켜면
 
-- 모든 타입에 자동으로 포함되어 있는 'null' 과 'undefined' 를 제거해 준다.
+* 모든 타입에 자동으로 포함되어 있는 'null' 과 'undefined' 를 제거해 준다.
 ---
 # nolmplicitReturns 옵션을 켜면
 
 * 함수 내에서 모든 코드가 값을 리턴하지 않으면, 컴파일 에러를 발생시킨다
 ---
 # structural type system 
-- 구조가 같으면, 같은 타입이다.
+* 구조가 같으면, 같은 타입이다.
 
 # nominal type system
-- 구조가 같아도 이름이 다르면, 다른 타입이다.
+* 구조가 같아도 이름이 다르면, 다른 타입이다.
 
 # duck typing
-- 만약 어떤 새가 오리처럼 걷고, 헤엄치고, 꽥꽥거리는 소리를 낸다면 나는 그 새를 오리라고 부를 것이다.
+* 만약 어떤 새가 오리처럼 걷고, 헤엄치고, 꽥꽥거리는 소리를 낸다면 나는 그 새를 오리라고 부를 것이다.
 ---
 # 타입 호환성
+
 1. 같거나 서브 타입인 경우, 할당이 가능하다. => 공변
-
 2. 함수의 매개변수 타입만 같거나 슈퍼타입인 경우, 할당이 가능하다. => 반병
-
 3. strictFunctionTypes 옵션을 켜면
 함수를 할당할 시에 함수의 매개변수 타입이 같거나 슈퍼타입인 경우가 아닌 경우, 에러를 통해 경고한다.
 ---
@@ -239,7 +236,6 @@ let obj = {
 * 누가 ??
 	- Visual Studio 2015 with TypeScript 1.8.4 이상
 	- atom-typescript 플러그인
-	
 *	https://github.com/TypeStrong/atom-typescript#compil-on-save
 
 ---
@@ -247,7 +243,6 @@ let obj = {
 
 * 파일 (상대) 경로명: string
 * TypeScript 2.1 New Spec
-
 * \`npm install --save-dev @tsconfig/deno`
 ---
 # files, include, exclude
@@ -261,7 +256,6 @@ let obj = {
 	- include
 * exclude 보다 약하다.
 * *같은걸 사용하면, /ts/ .tsx./ .d.ts 만 include (allowJS)
-	
   - exclude
 * 설정 안하면 4가지 (node_modules, bower_components, jspm_packages, \<outDir>)를 default 로 제외한다.
 * \<outDir>은 항상 제외한다. (include 에 있어도)
@@ -281,8 +275,8 @@ let obj = {
 * typeRoots 와 types 를 같이 사용하지 않는다.
 ---
 # compileOptions
-## -target 과 lib
 
+## -target 과 lib
 * target
 	- 빌드의  결과물을 어떤 버전으로 할 것이냐
 	- 지정하지 않으면 es3 이다.
@@ -296,12 +290,12 @@ let obj = {
 * 빈 [ ] => 'no definition found 어쩌구'
 ---
 # compileOptions
-  - outDir, outFile, rootDir
 
+  - outDir, outFile, rootDir
 ---
 # compileOptions
-## -strict
 
+## -strict
 * Enble all strict type checking options.  
 --nolmplicitAny  
 --nolmplicitThis  
@@ -313,8 +307,7 @@ let obj = {
 ---
 # --nolmplicitAny
 
-명시적이지 않게 any 타입을 사용하여, 표현식과 선언에 사용하면, 에러를 발생
-
+### 명시적이지 않게 any 타입을 사용하여, 표현식과 선언에 사용하면, 에러를 발생
 * 입스크립트가 추론을 실패한 경우, any 가 맞으면, any 라고 지정하라
 * 무것도 쓰지 않으면, 에러를 발생
 *  오류를 해결하면, any 라고 지정되어 있지 않은 경우는 any 가 아닌 것이다. (타입 추론이 되었으므로)
@@ -322,7 +315,6 @@ let obj = {
 # --nolmplicitThis
 
 ### 명시적이지 않게 any 타입을 사용하여, this 표현식에 사용하면, 에러를 발생합니다.
-
 * 번째 매개변수 자리에 this 를 놓고, this 에 대한 타입을 어떤 것이라도 표현하지 않으면, nolmplicitAny가 오류를 발생시킨다.
 * JavaScript 에서는 매개변수에 this 를 대체하여 콜을 하는 용도로도 쓰인다.
 * call / apply / bind 와 같이 this 를 대체하여 함수 콜을 하는 용도로도 쓰인다.
@@ -334,7 +326,6 @@ let obj = {
 
 * strictNullChecks 모드에서는, null 및 undefined 값이 모든 유형의 도메인에 속하지 않으며, 그 자신을 타입으로 가지거나, any 일 경우에만 할당이 가능하다.
 * 한가지 예외는 undefined 에 void 할당 가능
-
 * strictNullChecks 를 적용하지 않으면,
 	- 모든 타입은 null, undefined 값을 가질 수 있다.
 	- string 으로 타입을 지정해도, null 혹은 undefined 값을 할당 할 수 있다는 것이다.
@@ -356,11 +347,12 @@ let obj = {
 # --strictPropertyinInitialization
 
 ### 정의되지 않은 클래스의 속성이 생성자에서 초기화 되었는지 확인한다.
-이 옵션을 사용하려면 --strictNullChecks를 사용하도록 설정해야 한다.
-
+* 이 옵션을 사용하려면 --strictNullChecks를 사용하도록 설정해야 한다.
 * 보통 다른 함수로 이니셜라이즈 하는 경우 (async 함수)
 * constructor 에는 async 를 사용할 수 없다.
+---
 # --strictBindCallApply
+
 * Function 의 내장 함수인 bind / call / apply 를 사용할 때, 엄격하게 체크하도록 하는 옵션.
 * bind 는 해당 함수안에서 사용할 this 와 인자를 성정해주는 역할을 하고, call 과 apply 는 this 와 인자를 설정한 후, 실행까지 한다
 * call 과 apply는 인자를 설정하는 방식에서 차이점이 있다.
